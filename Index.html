@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODOS</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="LoginStyle.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+
+<body>
+    <!--Navigation bar-->
+    <div class="topnav">
+        <button class="button navbtn" onclick="document.getElementById('id01').style.display='block'">Login</button>
+        <button class="button navbtn" onclick="document.getElementById('id02').style.display='block'">Sign up</button>
+    </div>
+
+    <!--pop module code for login-->
+    <div id="id01" class="modal">
+        <span onclick="document.getElementById('id01').style.display='none'" class="close"
+            title="Close Modal">&times;</span>
+
+        <!-- Modal Content -->
+        <form class="modal-content animate" action="/action_page.php">
+            <div class="container">
+                <label for="uname"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="uname" required>
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="password" required>
+                <button class="button loginbtn" type="submit">Login</button>
+                <button type="button" onclick="document.getElementById('id01').style.display='none'"class="cancelbtn">Cancel</button>
+            </div>
+        </form>
+    </div>
+
+    <!--Code for sing up-->
+    <div id="id02" class="modal">
+        <span onclick="document.getElementById('id02').style.display='none'" class="close"
+            title="Close Modal">&times;</span>
+        <form class="modal-content" action="/action_page.php">
+            <div class="container">
+                <label for="email"><b>Email</b></label>
+                <input type="text" placeholder="Enter Email" name="email" required>
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="password" required>
+                <label for="psw-repeat"><b>Repeat Password</b></label>
+                <input type="password" placeholder="Repeat Password" name="password2" required>
+                <div class="clearfix">
+                    <button class="button loginbtn" type="submit" class="signup">Sign Up</button>
+                    <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <h1>My To do List</h1>
+    <form onsubmit="return false">
+        <textarea placeholder="Enter task"></textarea>
+        <button id="addBtn">
+            <p>Add a task to the list</p>
+        </button>
+    </form>
+    <section>
+        <h4>To do List</h4>
+        <div class="todoContainer">
+            <!-- This is where the todo items get added -->
+        </div>
+    </section>
+</body>
+<script src="index.js"></script>
+
+</html>
